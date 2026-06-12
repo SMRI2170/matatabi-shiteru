@@ -1,0 +1,140 @@
+/* ── また旅している 公式サイト 共通スタイル ───────────────────────────── */
+:root {
+  --primary: #c9401f;
+  --primary-dark: #a8330f;
+  --secondary: #2eb89a;
+  --bg: #f2ede5;
+  --surface: #ffffff;
+  --ink: #0d1b28;
+  --ink-sub: #344557;
+  --ink-mute: #6b7682;
+  --line: #e3ddd2;
+  --radius: 16px;
+  --maxw: 880px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── ヘッダー ──────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.brand:hover { text-decoration: none; }
+.brand img { width: 30px; height: 30px; border-radius: 8px; }
+.nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+.nav a { color: var(--ink-sub); }
+
+/* ── ヒーロー ──────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 64px 20px 48px;
+  background: radial-gradient(120% 90% at 50% 0%, #fff 0%, var(--bg) 70%);
+}
+.hero img.appicon {
+  width: 92px; height: 92px; border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(201, 64, 31, 0.25);
+}
+.hero h1 { font-size: 32px; margin: 22px 0 8px; letter-spacing: 1px; }
+.hero p.lead { font-size: 17px; color: var(--ink-sub); margin: 0 auto; max-width: 560px; }
+.badge-row { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 15px;
+  background: var(--primary); color: #fff;
+}
+.btn:hover { background: var(--primary-dark); text-decoration: none; }
+.btn.ghost { background: transparent; color: var(--primary); border: 1.5px solid var(--primary); }
+.btn.ghost:hover { background: rgba(201, 64, 31, 0.08); }
+
+/* ── セクション ────────────────────────────────────────────── */
+main { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+section { padding: 40px 0; border-top: 1px solid var(--line); }
+section:first-of-type { border-top: none; }
+h2 { font-size: 22px; margin: 0 0 18px; letter-spacing: 0.5px; }
+h2 .num {
+  display: inline-block; min-width: 26px; color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+h3 { font-size: 16px; margin: 26px 0 8px; color: var(--ink); }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 22px;
+}
+.card .ico { font-size: 26px; }
+.card h3 { margin: 10px 0 6px; }
+.card p { margin: 0; color: var(--ink-sub); font-size: 14.5px; }
+
+/* ── 法務ページ ────────────────────────────────────────────── */
+.legal { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 28px 28px; margin: 28px 0; }
+.legal h1 { font-size: 26px; }
+.meta { color: var(--ink-mute); font-size: 13.5px; margin: -4px 0 8px; }
+.legal ul, .legal ol { padding-left: 22px; }
+.legal li { margin: 6px 0; }
+.legal table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+.legal th, .legal td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+.legal th { background: #faf7f2; width: 30%; }
+.callout {
+  background: #fbf3ef; border-left: 4px solid var(--primary);
+  border-radius: 8px; padding: 14px 18px; margin: 18px 0;
+}
+.callout.info { background: #eef8f5; border-left-color: var(--secondary); }
+.toc { background: #faf7f2; border: 1px solid var(--line); border-radius: 12px; padding: 14px 20px; font-size: 14.5px; }
+.toc ol { margin: 6px 0; }
+
+.mail { font-weight: 600; }
+
+/* ── フッター ──────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  padding: 32px 20px 48px;
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: 13.5px;
+}
+.site-footer .links { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+.site-footer .links a { color: var(--ink-sub); }
+
+@media (max-width: 560px) {
+  .hero h1 { font-size: 26px; }
+  .nav { gap: 12px; font-size: 13px; }
+  .legal { padding: 8px 18px 20px; }
+  .legal th { width: 38%; }
+}
